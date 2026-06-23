@@ -1,53 +1,65 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 
-import { useResolvedScheme } from '@/features/settings';
-
 export default function TabsLayout() {
-  const scheme = useResolvedScheme();
-  const isDark = scheme === 'dark';
-
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: '#1a3c34',
-        tabBarInactiveTintColor: isDark ? '#9ca3af' : '#5a5f62',
+        tabBarActiveTintColor: '#ffffff',
+        tabBarInactiveTintColor: '#8e9192',
         tabBarStyle: {
-          backgroundColor: isDark ? '#15110c' : '#ffffff',
-          borderTopColor: isDark ? '#27272a' : '#c1c8c4',
+          backgroundColor: '#131313',
+          borderTopColor: 'rgba(255, 255, 255, 0.05)',
+          paddingBottom: 8,
+          paddingTop: 8,
+          height: 64,
+        },
+        tabBarLabelStyle: {
+          fontFamily: 'Inter',
+          fontSize: 10,
+          fontWeight: '600',
+          letterSpacing: 1.2,
+          textTransform: 'uppercase',
+          marginTop: 4,
         },
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />,
+          tabBarIcon: ({ color, size }) => <MaterialIcons name="home" size={28} color={color} />,
         }}
       />
       <Tabs.Screen
         name="search"
         options={{
-          title: 'Search',
-          tabBarIcon: ({ color, size }) => <Ionicons name="search" size={size} color={color} />,
+          title: 'Explore',
+          tabBarIcon: ({ color, size }) => <MaterialIcons name="explore" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="add"
         options={{
-          title: 'Add',
-          tabBarIcon: ({ color, size }) => <Ionicons name="add-circle-outline" size={size} color={color} />,
+          title: 'Create',
+          tabBarIcon: ({ color, size }) => <MaterialIcons name="add-circle" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="favorites"
+        options={{
+          title: 'Saved',
+          tabBarIcon: ({ color, size }) => <MaterialIcons name="bookmark" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color, size }) => <Ionicons name="person-outline" size={size} color={color} />,
+          tabBarIcon: ({ color, size }) => <MaterialIcons name="person" size={24} color={color} />,
         }}
       />
-      {/* Hidden tabs — accessible as routes but not shown in the tab bar */}
-      <Tabs.Screen name="favorites" options={{ href: null }} />
+      {/* Hidden settings tab */}
       <Tabs.Screen name="settings" options={{ href: null }} />
     </Tabs>
   );

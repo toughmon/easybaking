@@ -1,8 +1,7 @@
 import { Image } from 'expo-image';
 import { Link } from 'expo-router';
-import { Pressable, View } from 'react-native';
+import { Pressable, View, Text } from 'react-native';
 
-import { Badge, Card, Text } from '@/components/ui';
 import { FavoriteButton } from '@/features/favorites/components/favorite-button';
 import type { RecipeSummary } from '../types';
 import { DIFFICULTY_META, formatTotalTime } from '../utils';
@@ -16,22 +15,22 @@ export function RecipeCard({ recipe }: Props) {
 
   return (
     <Link href={{ pathname: '/recipe/[id]', params: { id: recipe.id } }} asChild>
-      <Pressable accessibilityRole="button" className="active:opacity-90">
-        <Card>
+      <Pressable accessibilityRole="button">
+        <View>
           <View>
             <Image
               source={recipe.imageUrl}
-              className="h-44 w-full"
+             
               contentFit="cover"
               transition={200}
             />
-            <FavoriteButton recipeId={recipe.id} className="absolute right-3 top-3" />
+            <FavoriteButton recipeId={recipe.id} />
           </View>
 
-          <View className="gap-2 p-4">
-            <View className="flex-row items-center gap-2">
-              <Badge label={recipe.category} tone="brand" />
-              <Badge label={difficulty.label} tone={difficulty.tone} />
+          <View>
+            <View>
+              <View label={recipe.category} tone="brand" />
+              <View label={difficulty.label} tone={difficulty.tone} />
             </View>
 
             <Text variant="heading" numberOfLines={1}>
@@ -41,11 +40,11 @@ export function RecipeCard({ recipe }: Props) {
               {recipe.summary}
             </Text>
 
-            <Text variant="caption" className="mt-1">
+            <Text variant="caption">
               ⏱ 총 {formatTotalTime(recipe.prepMinutes, recipe.bakeMinutes)}
             </Text>
           </View>
-        </Card>
+        </View>
       </Pressable>
     </Link>
   );

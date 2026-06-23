@@ -1,7 +1,6 @@
 import type { ReactElement } from 'react';
-import { ActivityIndicator, FlatList, View } from 'react-native';
+import { ActivityIndicator, FlatList, View, Text, Pressable } from 'react-native';
 
-import { Button, Text } from '@/components/ui';
 import type { RecipeSummary } from '../types';
 import { RecipeCard } from './recipe-card';
 
@@ -28,7 +27,7 @@ export function RecipeList({
 }: Props) {
   if (isLoading) {
     return (
-      <View className="flex-1 items-center justify-center py-16">
+      <View>
         <ActivityIndicator size="large" color="#c97e1f" />
       </View>
     );
@@ -36,9 +35,9 @@ export function RecipeList({
 
   if (isError) {
     return (
-      <View className="flex-1 items-center justify-center gap-4 py-16">
+      <View>
         <Text variant="subtitle">불러오는 중 문제가 발생했어요.</Text>
-        {onRetry && <Button label="다시 시도" variant="secondary" onPress={onRetry} />}
+        {onRetry && <Pressable label="다시 시도" variant="secondary" onPress={onRetry} />}
       </View>
     );
   }
@@ -49,11 +48,11 @@ export function RecipeList({
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => <RecipeCard recipe={item} />}
       ListHeaderComponent={ListHeaderComponent}
-      ItemSeparatorComponent={() => <View className="h-4" />}
+      ItemSeparatorComponent={() => <View />}
       contentContainerStyle={{ paddingVertical: 16 }}
       showsVerticalScrollIndicator={false}
       ListEmptyComponent={
-        <View className="items-center py-16">
+        <View>
           <Text variant="subtitle">{emptyText}</Text>
         </View>
       }

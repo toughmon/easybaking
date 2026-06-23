@@ -1,9 +1,9 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
-import { Alert, Pressable, ScrollView, TextInput, View } from 'react-native';
+import { Alert, Pressable, ScrollView, TextInput, View, Text } from 'react-native';
 import { z } from 'zod';
 
-import { Button, Card, Screen, Text } from '@/components/ui';
 import { useFavoritesStore } from '@/features/favorites';
 import { useSettingsStore, type ThemeMode } from '@/features/settings';
 import { cn } from '@/utils/cn';
@@ -47,14 +47,14 @@ export default function SettingsScreen() {
   };
 
   return (
-    <Screen>
+    <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingVertical: 16, gap: 24 }}>
         <Text variant="title">설정</Text>
 
         {/* Profile form — react-hook-form + zod validation */}
-        <View className="gap-2">
+        <View>
           <Text variant="heading">프로필</Text>
-          <Card className="gap-3 p-4">
+          <View>
             <Text variant="caption">베이커 이름</Text>
             <Controller
               control={control}
@@ -66,38 +66,28 @@ export default function SettingsScreen() {
                   onBlur={onBlur}
                   placeholder="예) 빵순이"
                   placeholderTextColor="#9ca3af"
-                  className="h-12 rounded-xl bg-neutral-100 px-4 text-base text-neutral-900 dark:bg-neutral-800 dark:text-neutral-50"
+                 
                 />
               )}
             />
             {errors.bakerName && (
-              <Text className="text-sm text-red-500">{errors.bakerName.message}</Text>
+              <Text>{errors.bakerName.message}</Text>
             )}
-            <Button label="저장" onPress={handleSubmit(onSubmit)} disabled={!isDirty} />
-          </Card>
+            <Pressable label="저장" onPress={handleSubmit(onSubmit)} disabled={!isDirty} />
+          </View>
         </View>
 
         {/* Theme preference */}
-        <View className="gap-2">
+        <View>
           <Text variant="heading">화면 테마</Text>
-          <View className="flex-row gap-2">
+          <View>
             {THEME_OPTIONS.map((opt) => (
               <Pressable
                 key={opt.value}
                 onPress={() => setThemeMode(opt.value)}
-                className={cn(
-                  'h-11 flex-1 items-center justify-center rounded-xl',
-                  themeMode === opt.value
-                    ? 'bg-brand-500'
-                    : 'bg-neutral-200 dark:bg-neutral-800',
-                )}>
+               >
                 <Text
-                  className={cn(
-                    'font-medium',
-                    themeMode === opt.value
-                      ? 'text-white'
-                      : 'text-neutral-700 dark:text-neutral-300',
-                  )}>
+                 >
                   {opt.label}
                 </Text>
               </Pressable>
@@ -106,9 +96,9 @@ export default function SettingsScreen() {
         </View>
 
         {/* Danger zone */}
-        <View className="gap-2">
+        <View>
           <Text variant="heading">데이터</Text>
-          <Button
+          <Pressable
             label="즐겨찾기 전체 삭제"
             variant="secondary"
             onPress={() =>
@@ -120,6 +110,6 @@ export default function SettingsScreen() {
           />
         </View>
       </ScrollView>
-    </Screen>
+    </SafeAreaView>
   );
 }

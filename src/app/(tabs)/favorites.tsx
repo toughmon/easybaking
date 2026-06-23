@@ -1,7 +1,7 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useMemo } from 'react';
-import { View } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 
-import { Screen, Text } from '@/components/ui';
 import { useFavoritesStore } from '@/features/favorites';
 import { RecipeList, useRecipes } from '@/features/recipes';
 
@@ -15,7 +15,7 @@ export default function FavoritesScreen() {
   );
 
   return (
-    <Screen>
+    <SafeAreaView>
       <RecipeList
         recipes={favorites}
         isLoading={isLoading}
@@ -23,11 +23,11 @@ export default function FavoritesScreen() {
         onRetry={refetch}
         emptyText="아직 즐겨찾기한 레시피가 없어요. ♥ 를 눌러 추가해 보세요."
         ListHeaderComponent={
-          <View className="mb-2">
+          <View>
             <Text variant="title">즐겨찾기</Text>
           </View>
         }
       />
-    </Screen>
+    </SafeAreaView>
   );
 }

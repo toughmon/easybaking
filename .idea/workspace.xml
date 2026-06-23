@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baef9877-cb94-4922-aaa6-e3b4c209bbce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/explore.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/animated-icon.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/animated-icon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/animated-icon.web.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app-tabs.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app-tabs.web.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/external-link.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/hint-row.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/themed-text.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/themed-view.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/collapsible.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/web-badge.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/theme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/use-color-scheme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/use-color-scheme.web.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/use-theme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,29 +19,66 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "toughmon"
+  }
+}]]></component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1782117911" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1782117910" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/toughmon/easybaking.git",
+    "accountId": "029da3d6-ed6c-4d30-abc6-120bdc9775d2"
+  }
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.596169050930222" />
-      <entry key="MS500" value="4.24358945294912" />
-      <entry key="S2" value="6.634211939068131" />
-      <entry key="S5" value="7.404306393809869" />
-      <entry key="S10" value="7.693147479450423" />
-      <entry key="S30" value="7.895636372973457" />
-      <entry key="S60" value="7.947553207469553" />
-      <entry key="M2" value="7.973933659230704" />
-      <entry key="M5" value="8.110169409230188" />
-      <entry key="M10" value="8.97738657691445" />
-      <entry key="M15" value="9.973293201205951" />
-      <entry key="M30" value="11.974981730595557" />
-      <entry key="H1" value="13.63950343108733" />
-      <entry key="H2" value="14.716930405411421" />
-      <entry key="H4" value="15.330466369837692" />
-      <entry key="D1" value="15.884310918198816" />
-      <entry key="W1" value="15.983369699161138" />
+      <entry key="MS100" value="1.6486833036310844" />
+      <entry key="MS500" value="3.2348068258277918" />
+      <entry key="S2" value="6.7188141732055024" />
+      <entry key="S5" value="9.553985288355667" />
+      <entry key="S10" value="11.05717664008137" />
+      <entry key="S30" value="12.295273335500598" />
+      <entry key="S60" value="12.639904099292187" />
+      <entry key="M2" value="12.817971257508155" />
+      <entry key="M5" value="12.927551962335894" />
+      <entry key="M10" value="13.054913013118192" />
+      <entry key="M15" value="13.444810773653227" />
+      <entry key="M30" value="15.585428636947649" />
+      <entry key="H1" value="19.34651439839876" />
+      <entry key="H2" value="23.040669781315703" />
+      <entry key="H4" value="25.66315184714379" />
+      <entry key="D1" value="28.386305019446464" />
+      <entry key="W1" value="28.910802584406028" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -87,23 +100,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.5433010855003164" />
-      <entry key="MS500" value="4.194456164813658" />
-      <entry key="S2" value="6.614263279278624" />
-      <entry key="S5" value="7.395421487070244" />
-      <entry key="S10" value="7.688539042975051" />
-      <entry key="S30" value="7.894061816157108" />
-      <entry key="S60" value="7.946761028795745" />
-      <entry key="M2" value="7.97353631693115" />
-      <entry key="M5" value="8.11000579137783" />
-      <entry key="M10" value="8.977289035214588" />
-      <entry key="M15" value="9.973216103298979" />
-      <entry key="M30" value="11.974931046467354" />
-      <entry key="H1" value="13.63947304260498" />
-      <entry key="H2" value="14.716913577827743" />
-      <entry key="H4" value="15.330457490984658" />
-      <entry key="D1" value="15.884309368419851" />
-      <entry key="W1" value="15.983369475976332" />
+      <entry key="MS100" value="1.4180235551703102" />
+      <entry key="MS500" value="3.047002550901893" />
+      <entry key="S2" value="6.628875753950882" />
+      <entry key="S5" value="9.504088903123737" />
+      <entry key="S10" value="11.028552823107091" />
+      <entry key="S30" value="12.284728543491285" />
+      <entry key="S60" value="12.634492538071813" />
+      <entry key="M2" value="12.815229568481733" />
+      <entry key="M5" value="12.926446504741234" />
+      <entry key="M10" value="13.054357823915822" />
+      <entry key="M15" value="13.44443735500667" />
+      <entry key="M30" value="15.585232582514031" />
+      <entry key="H1" value="19.346407673860213" />
+      <entry key="H2" value="23.040612001351445" />
+      <entry key="H4" value="25.663121361747443" />
+      <entry key="D1" value="28.3862996594626" />
+      <entry key="W1" value="28.91080181097259" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -124,7 +137,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/project/easybaking",

@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Pressable } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 
 import { cn } from '@/utils/cn';
 import { useFavoritesStore } from '../store/favorites.store';
@@ -22,7 +22,7 @@ export function FavoriteButton({ recipeId, size = 24, className }: Props) {
       accessibilityLabel={isFavorite ? '즐겨찾기 해제' : '즐겨찾기 추가'}
       hitSlop={8}
       onPress={() => toggle(recipeId)}
-      className={cn('h-10 w-10 items-center justify-center rounded-full bg-black/20', className)}>
+     >
       <Ionicons
         name={isFavorite ? 'heart' : 'heart-outline'}
         size={size}

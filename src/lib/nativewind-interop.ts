@@ -1,3 +1,4 @@
+import { Text, View, Pressable } from 'react-native';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { cssInterop } from 'nativewind';

@@ -1,3 +1,4 @@
+import { Text, View, Pressable } from 'react-native';
 import '@/global.css';
 
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
