@@ -34,6 +34,8 @@ const SEED: Recipe[] = [
       { order: 3, description: '체 친 가루류를 넣고 주걱으로 가볍게 섞은 뒤 초콜릿을 넣는다.', durationMinutes: 3 },
       { order: 4, description: '반죽을 한 스푼씩 떠서 팬에 올리고 175℃ 오븐에서 굽는다.', durationMinutes: 12 },
     ],
+    author: { name: 'Chef Julian Moreau', avatarUrl: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=100' },
+    likes: 1240,
   },
   {
     id: 'plain-scone',
@@ -60,6 +62,8 @@ const SEED: Recipe[] = [
       { order: 3, description: '2cm 두께로 밀어 틀로 찍고 윗면에 달걀물을 바른다.', durationMinutes: 5 },
       { order: 4, description: '190℃ 오븐에서 노릇하게 굽는다.', durationMinutes: 18 },
     ],
+    author: { name: 'Chef Julian Moreau', avatarUrl: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=100' },
+    likes: 852,
   },
   {
     id: 'basque-cheesecake',
@@ -85,6 +89,8 @@ const SEED: Recipe[] = [
       { order: 3, description: '유산지를 깐 틀에 붓고 220℃ 고온에서 겉면이 진하게 탈 때까지 굽는다.', durationMinutes: 40 },
       { order: 4, description: '완전히 식힌 뒤 냉장고에서 4시간 이상 안정시킨다.' },
     ],
+    author: { name: 'Elena Rossi', avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100' },
+    likes: 2105,
   },
   {
     id: 'soft-milk-bread',
@@ -111,6 +117,8 @@ const SEED: Recipe[] = [
       { order: 3, description: '분할·성형 후 식빵틀에 넣어 2차 발효한다.', durationMinutes: 50 },
       { order: 4, description: '180℃ 오븐에서 굽는다.', durationMinutes: 30 },
     ],
+    author: { name: 'Kenji Sato', avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100' },
+    likes: 540,
   },
   {
     id: 'lemon-madeleine',
@@ -136,6 +144,8 @@ const SEED: Recipe[] = [
       { order: 2, description: '반죽을 냉장고에서 최소 1시간 휴지시킨다.', durationMinutes: 60 },
       { order: 3, description: '틀의 80%까지 짜 넣고 190℃ 오븐에서 굽는다.', durationMinutes: 13 },
     ],
+    author: { name: 'Chef Julian Moreau', avatarUrl: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=100' },
+    likes: 1530,
   },
   {
     id: 'fudgy-brownie',
@@ -161,6 +171,8 @@ const SEED: Recipe[] = [
       { order: 2, description: '설탕, 달걀을 섞고 가루류를 넣어 가볍게 섞는다.', durationMinutes: 5 },
       { order: 3, description: '틀에 붓고 175℃ 오븐에서 겉면만 익도록 굽는다.', durationMinutes: 25 },
     ],
+    author: { name: 'Kenji Sato', avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100' },
+    likes: 920,
   },
 ];
 
@@ -176,6 +188,8 @@ const toSummary = (r: Recipe): RecipeSummary => ({
   difficulty: r.difficulty,
   prepMinutes: r.prepMinutes,
   bakeMinutes: r.bakeMinutes,
+  author: r.author,
+  likes: r.likes,
 });
 
 /** In-memory implementation backed by static seed data. */

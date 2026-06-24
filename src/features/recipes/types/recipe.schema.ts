@@ -19,6 +19,11 @@ export const recipeStepSchema = z.object({
   durationMinutes: z.number().int().nonnegative().optional(),
 });
 
+export const recipeAuthorSchema = z.object({
+  name: z.string(),
+  avatarUrl: z.string().optional(),
+});
+
 export const recipeSchema = z.object({
   id: z.string(),
   title: z.string(),
@@ -32,6 +37,8 @@ export const recipeSchema = z.object({
   ingredients: z.array(ingredientSchema),
   steps: z.array(recipeStepSchema),
   tags: z.array(z.string()),
+  author: recipeAuthorSchema,
+  likes: z.number().int().nonnegative().default(0),
 });
 
 /** Lightweight projection used in lists/feeds (no ingredients/steps payload). */
@@ -44,6 +51,8 @@ export const recipeSummarySchema = recipeSchema.pick({
   difficulty: true,
   prepMinutes: true,
   bakeMinutes: true,
+  author: true,
+  likes: true,
 });
 
 export type RecipeDifficulty = z.infer<typeof recipeDifficultySchema>;

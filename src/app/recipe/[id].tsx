@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'expo-image';
 import { Stack, useLocalSearchParams, router } from 'expo-router';
@@ -14,6 +15,20 @@ export default function RecipeDetailScreen() {
   const toggleFavorite = useFavoritesStore((s) => s.toggle);
 
   const isFavorite = id ? favorites.includes(id) : false;
+
+  const [isLiked, setIsLiked] = useState(false);
+  const [likesCount, setLikesCount] = useState(0);
+
+  useEffect(() => {
+    if (recipe) {
+      setLikesCount(recipe.likes);
+    }
+  }, [recipe]);
+
+  const handleLike = () => {
+    setIsLiked(!isLiked);
+    setLikesCount(prev => isLiked ? prev - 1 : prev + 1);
+  };
 
   if (isLoading) {
     return (
@@ -56,7 +71,8 @@ export default function RecipeDetailScreen() {
               contentFit="cover" 
             />
             {/* Gradient Overlay */}
-            <View className="absolute inset-0 image-overlay-gradient" />
+            <View className="absolute inset-0 bg-black/60" />
+            <View className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-transparent" />
             
             <View className="absolute bottom-0 left-0 w-full p-margin-mobile md:p-12 flex-col items-start">
               <View className="flex-row gap-2 mb-4">
@@ -69,6 +85,15 @@ export default function RecipeDetailScreen() {
                   </Text>
                 </View>
               </View>
+              {/* Author Profile */}
+              <View className="flex-row items-center gap-3 mb-4">
+                <Image source={recipe.author.avatarUrl} className="w-10 h-10 rounded-full bg-surface-container-high" contentFit="cover" />
+                <View>
+                  <Text className="font-label-md text-label-md text-outline uppercase tracking-widest">Recipe By</Text>
+                  <Text className="font-body-md text-body-md text-primary font-bold">{recipe.author.name}</Text>
+                </View>
+              </View>
+
               <Text className="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary mb-4 max-w-3xl">
                 {recipe.title}
               </Text>
@@ -76,8 +101,31 @@ export default function RecipeDetailScreen() {
                 {recipe.summary}
               </Text>
               
+              {/* Action Buttons (Save & Like) */}
+              <View className="flex-row flex-wrap items-center gap-4 mb-8">
+                <Pressable 
+                  onPress={() => toggleFavorite(id)} 
+                  className={`px-6 py-3 rounded-full flex-row items-center gap-2 border active:scale-95 transition-all ${isFavorite ? 'bg-secondary border-secondary' : 'border-white/20 bg-transparent'}`}
+                >
+                  <MaterialIcons name={isFavorite ? "bookmark" : "bookmark-border"} size={20} color={isFavorite ? "#131313" : "#ffffff"} />
+                  <Text className={`font-label-md text-label-md uppercase tracking-widest ${isFavorite ? 'text-background' : 'text-primary'}`}>
+                    {isFavorite ? 'Saved' : 'Save Recipe'}
+                  </Text>
+                </Pressable>
+                
+                <Pressable 
+                  onPress={handleLike} 
+                  className="px-6 py-3 rounded-full flex-row items-center gap-2 border border-white/20 bg-transparent active:scale-95 transition-all"
+                >
+                  <MaterialIcons name={isLiked ? "favorite" : "favorite-border"} size={20} color={isLiked ? "#ffb3ae" : "#ffffff"} />
+                  <Text className="font-label-md text-label-md uppercase tracking-widest text-primary">
+                    {likesCount} Likes
+                  </Text>
+                </Pressable>
+              </View>
+
               {/* Meta Info Glass Card */}
-              <View className="glass-card rounded-xl p-4 md:p-6 flex-row flex-wrap gap-6 md:gap-12 w-full md:w-auto">
+              <View className="bg-black border border-white/10 rounded-xl p-4 md:p-6 flex-row flex-wrap gap-6 md:gap-12 w-full md:w-auto shadow-2xl">
                 <View>
                   <Text className="font-label-md text-label-md text-outline uppercase mb-1">Prep Time</Text>
                   <Text className="font-headline-md text-headline-md text-primary">{recipe.prepMinutes}m</Text>

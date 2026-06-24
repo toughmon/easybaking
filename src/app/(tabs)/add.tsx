@@ -10,8 +10,8 @@ export default function AddRecipeScreen() {
         <Pressable className="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low active:opacity-70">
           <MaterialIcons name="menu" size={24} color="#ffffff" />
         </Pressable>
-        <Text className="font-headline-md text-headline-md tracking-widest text-primary uppercase text-center flex-1">
-          L'ART DE CUIRE
+        <Text className="font-headline-md text-headline-md tracking-widest text-primary uppercase text-center flex-1 md:flex-none">
+          EasyBaking
         </Text>
         <Pressable className="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low active:opacity-70">
           <MaterialIcons name="search" size={24} color="#ffffff" />

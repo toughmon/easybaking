@@ -14,7 +14,7 @@ export default function HomeScreen() {
             <MaterialIcons name="menu" size={24} color="#8e9192" />
           </Pressable>
           <Text className="font-headline-md text-headline-md tracking-widest text-primary uppercase text-center flex-1 md:flex-none">
-            L'ART DE CUIRE
+            EasyBaking
           </Text>
           <View className="flex-row items-center gap-4">
             {/* Desktop Nav Links */}
